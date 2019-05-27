@@ -5,7 +5,7 @@ cd /shelf/apps/pjt6/Hsh/blobs
 conda activate python27
 
 
-minialign -t12 -xont Hs_trimmed.ctg._L5000.lay.fa /shelf/apps/pjt6/Hsh/Hsac_all_data_reduce_ploidy_300X_CMAPSEN_normal.trimmedReads.fasta.gz > temp.sam
+minialign -t12 -xont Hs_trimmed.ctg._L5000.lay.fa /shelf/apps/pjt6/Hsh/Hsac_all_data_300X_CMAPSEN_normal.trimmedReads.fasta.gz > temp.sam
 wait 
 #samtools view -@ 18 -S -b -o unsorted.bam temp.sam
 wait 
@@ -14,16 +14,6 @@ wait
 #samtools index sorted
 
 wait 
-#purge_haplotigs readhist sorted.bam
-
-#purge_haplotigs  contigcov  -i sorted.bam.genecov -o coverage_stats.csv  -l 3  -m 27  -h 130
-
-#
-
-#purge_haplotigs purge  -g Hs_trimmed.ctg._L5000.lay.fa  -c coverage_stats.csv  -b sorted.bam  -t 18  -a 60
-
-#cp curated.haplotigs.fasta reassigned.haplotigs.fasta
-
 
 #python ~/Downloads/blobtools-light-master/mapping2cov.py -a /home/pt40963/scratch/nematode/newton/purge_haplo_ALL_haplotypes_all_data/purge_the_purged/Hs_trimmed.ctg._L5000.lay.fa -bam /home/pt40963/scratch/nematode/newton/purge_haplo_ALL_haplotypes_all_data/purge_the_purged/sorted.bam -o contig.mappingall_final.cas.cov
 
@@ -65,9 +55,4 @@ cd ../
 
 python /shelf/apps/pjt6/apps/public_scripts-master/get_sequences_i_want_from_fasta_command_line_not_wanted_file.py Hs_trimmed.ctg._L5000.lay.fa ./allfinal.fa.blobplots/bad_contigs.out 10 Hs_trimmed.ctg._L5000.lay.contim_filtered.fasta
 rm temp.sam
-
-#cp newt_correc_corre.ctg.L4000_p19.contim_filtered_final.fasta contigs.fasta
-
-#python /shelf/apps/pjt6/apps/finishingTool/finisherSC.py -par 8 /storage/home/users/pjt6/shelf_apps/newton/newton_wtdgb/L4000/ /shelf/apps/pjt6/conda/envs/python27/bin/
-
 
