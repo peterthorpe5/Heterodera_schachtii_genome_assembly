@@ -1,6 +1,6 @@
 #$ -cwd
 
-cd /shelf/apps/pjt6/newton/final_genome/
+cd /shelf/apps/pjt6/
 
 python run_pipeline.py
 
@@ -10,13 +10,13 @@ conda activate repeatmasking
 
 # genomtools is in path
 
-/shelf/apps/pjt6/apps/TransposonPSI_08222010/transposonPSI.pl Gp_Newton_haplotype1.fasta nucl
+/shelf/apps/pjt6/apps/TransposonPSI_08222010/transposonPSI.pl Final.fasta nucl
 
 # LTRharvest in genome tools  http://genometools.org/documents/ltrharvest.pdf
 
 
 #make the enhanced database
-gt suffixerator -db Gp_Newton_haplotype1.fasta -indexname gp -tis -suf -lcp -des -ssp -sds -dna
+gt suffixerator -db Final.fasta -indexname gp -tis -suf -lcp -des -ssp -sds -dna
 
 
 #search for the beasties. 
