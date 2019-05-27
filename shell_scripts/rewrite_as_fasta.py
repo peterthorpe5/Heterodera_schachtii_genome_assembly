@@ -13,12 +13,8 @@ from optparse import OptionParser
 def reformat_as_fasta(filename,length,outfile):
     "this function re-write a file as a fasta file"
     f= open(outfile, 'w')
-
-        
-    #print wanted_data
     for seq_record in SeqIO.parse(filename, "fasta"):
         seq_record.id = str(seq_record.id).split("|")[0]
-        #seq_record.id= seq_record.id.replace("sca", "RpS")
         seq_record.description = ""
         SeqIO.write(seq_record, f, "fasta")                    
     
@@ -71,5 +67,4 @@ length = options.length
 
 
 reformat_as_fasta(in_file,length,out)
-print 'done'
 
