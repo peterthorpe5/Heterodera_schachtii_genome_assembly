@@ -21,5 +21,6 @@ diamond blastp -p 12 --more-sensitive -e 1e-5 -v -q Hs.aa.fasta  -d Hs.dmnd --ou
 
 ~/shelf_apps/apps/MCScanX/downstream_analyses/detect_collinear_tandem_arrays -g hs_hs.gff -b hs_hs.blast -c hs_hs.collinearity -o hs_detect_collinear_tandem_arrays.out
 
+conda activate bioperl # need to install bioperl, plus loads of things that fail. Then you need clustalw in your path too.
 # 
 perl ~/shelf_apps/apps/MCScanX/downstream_analyses/add_ka_and_ks_to_collinearity.pl -i hs_hs.collinearity -d ../H_sch_gene_calls_v1.codingseq.t1_only.fasta -o hs.collinearity.kaks
