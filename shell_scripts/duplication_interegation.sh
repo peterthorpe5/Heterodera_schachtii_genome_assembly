@@ -41,6 +41,7 @@ do
     ${current_path}${species}/${species}"
     echo ${mcscancmd}
     eval ${mcscancmd}
+    mv hg_hg.html hg_hg_${evalue}.html
     # collinear_tandem_arrays
     collincmd="${mcscanx_path}/downstream_analyses/detect_collinear_tandem_arrays 
     -g ${species}.gff 
@@ -49,6 +50,14 @@ do
     -o ${species}_${evalue}_detect_collinear_tandem_array"
     echo ${collincmd}
     eval ${collincmd}
+    #######################################
+    dma="perl 
+    ${mcscanx_path}/downstream_analyses/dissect_multiple_alignment 
+    -g ${species}.gff 
+    -c ${species}.collinearity 
+    -o ${species}.${evalue}.dissect_multiple_alignment"
+    echo ${dma}
+    eval ${dma}
     echo "we need bioperl activated for this next bit"
     kakscmd="perl 
     ${mcscanx_path}/downstream_analyses/add_ka_and_ks_to_collinearity.pl 
