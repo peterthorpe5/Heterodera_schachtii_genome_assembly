@@ -5,7 +5,8 @@ cd /shelf/apps/pjt6/Hsh/blobs
 conda activate python27
 
 
-minialign -t12 -xont Hs_trimmed.ctg._L5000.lay.fa /shelf/apps/pjt6/Hsh/Hsac_all_data_300X_CMAPSEN_normal.trimmedReads.fasta.gz > temp.sam
+minialign -t12 -xont Hs_trimmed.ctg._L5000.lay.fa /storage/home/users/pjt6/Hschach/Hsh/wokring_files/reads_tried/Hsac_all_data_default.correctedReads.fasta.gz  > temp.sam
+
 wait 
 #samtools view -@ 18 -S -b -o unsorted.bam temp.sam
 wait 
@@ -53,6 +54,6 @@ cat *.names >  bad_contigs.out
 
 cd ../
 
-python /shelf/apps/pjt6/apps/public_scripts-master/get_sequences_i_want_from_fasta_command_line_not_wanted_file.py Hs_trimmed.ctg._L5000.lay.fa ./allfinal.fa.blobplots/bad_contigs.out 10 Hs_trimmed.ctg._L5000.lay.contim_filtered.fasta
+#python /shelf/apps/pjt6/apps/public_scripts-master/get_sequences_i_want_from_fasta_command_line_not_wanted_file.py Hs_trimmed.ctg._L5000.lay.fa ./allfinal.fa.blobplots/bad_contigs.out 10 Hs_trimmed.ctg._L5000.lay.contim_filtered.fasta
 rm temp.sam
 

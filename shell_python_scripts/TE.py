@@ -266,7 +266,7 @@ def make_repeatmodeler_database(name, input_filename, BuildDatabase='/shelf/apps
     print cline
     return os.system(cline)
 
-def run_repeatmodeler(database, RepeatModeler='perl RepeatModeler', pa='8', engine='ncbi',
+def run_repeatmodeler(database, RepeatModeler='perl /shelf/modulefiles/tools/RepeatModeler/1.0.10/RepeatModeler', pa='8', engine='ncbi',
                      species='eukaryota'):
     frame = inspect.currentframe()
     args, _, _, values = inspect.getargvalues(frame)
