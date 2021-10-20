@@ -1,7 +1,7 @@
 # Heterodera_schachtii_genome_assembly
 Scripts use to assembly Heterodera schachtii
 
-  License: MIT License
+  License: MIT License - see the license file. 
 
 `` software dependencies``
 please see the conda_envs directory (conda: https://docs.conda.io/en/latest/). 
